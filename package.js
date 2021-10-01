@@ -13,14 +13,9 @@ Package.registerBuildPlugin({
     'plugin/compile-stylus.js'
   ],
   npmDependencies: {
-    stylus: 'https://github.com/meteor/stylus/tarball/bb47a357d132ca843718c63998eb37b90013a449', // fork of 0.54.5
+    stylus: '0.55.0',
     glob: '7.1.3',
-    nib: '1.1.2',
-    jeet: '7.2.0',
-    rupture: '0.7.1',
-    axis: '1.0.0',
-    typographic: '3.0.0',
-    'autoprefixer-stylus': '0.14.0',
+    'autoprefixer-stylus': '1.0.0',
   }
 });
 

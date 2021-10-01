@@ -4,11 +4,6 @@ const glob = Npm.require('glob');
 const fs = Plugin.fs;
 const path = Plugin.path;
 
-const nib = Npm.require('nib');
-const jeet = Npm.require('jeet');
-const rupture = Npm.require('rupture');
-const axis = Npm.require('axis');
-const typographic = Npm.require('typographic');
 const autoprefixer = Npm.require('autoprefixer-stylus');
 
 // prettier-ignore
@@ -129,11 +124,6 @@ class StylusCompiler extends MultiFileCachingCompiler {
 
     function isPluginPath(filePath) {
       return filePath.includes('compileStylusBatch/node_modules/stylus/lib/') || // Stylus built-in
-        filePath.includes('compileStylusBatch/node_modules/nib/') || // Nib
-        filePath.includes('compileStylusBatch/node_modules/axis/') || // Axis
-        filePath.includes('compileStylusBatch/node_modules/jeet/') || // Jeet
-        filePath.includes('compileStylusBatch/node_modules/rupture/') || // Rupture
-        filePath.includes('compileStylusBatch/node_modules/typographic/') || // Typographic
         false; // Not a plugin
     }
 
@@ -226,12 +216,7 @@ class StylusCompiler extends MultiFileCachingCompiler {
     const f = new Future();
 
     // Here is where the stylus module is instantiated and plugins are attached
-    let style = stylus(inputFile.getContentsAsString())
-      .use(nib())
-      .use(jeet())
-      .use(rupture({implicit: false})) // https://github.com/jescalan/rupture#usage
-      .use(typographic())
-      .use(axis({implicit: false})); // https://axis.netlify.com/#usage
+    let style = stylus(inputFile.getContentsAsString());
 
     if (fileOptions.autoprefixer) {
       style = style.use(autoprefixer(fileOptions.autoprefixer));
