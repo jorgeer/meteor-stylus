@@ -1,6 +1,6 @@
 Package.describe({
   name: 'hubroedu:stylus',
-  version: '2.1.0.',
+  version: '2.1.0',
   summary: 'Stylus plugin with plugins from mquandalle:stylus. Compatible with Meteor 1.4 and \'ecmascript\'',
   git: 'https://github.com/hubroedu/meteor-stylus.git',
   readme: 'README.md'
