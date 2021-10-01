@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'coagmano:stylus',
-  version: '2.0.0',
+  name: 'hubroedu:stylus',
+  version: '2.1.0.',
   summary: 'Stylus plugin with plugins from mquandalle:stylus. Compatible with Meteor 1.4 and \'ecmascript\'',
-  git: 'https://github.com/coagmano/meteor-stylus.git',
+  git: 'https://github.com/hubroedu/meteor-stylus.git',
   readme: 'README.md'
 });
 
@@ -24,7 +24,7 @@ Package.onUse(function (api) {
 });
 
 Package.onTest(function (api) {
-  api.use(['tinytest', 'coagmano:stylus', 'test-helpers', 'templating', 'ecmascript']);
+  api.use(['tinytest', 'hubroedu:stylus', 'test-helpers', 'templating', 'ecmascript']);
   api.addFiles([
     'stylus_tests.html',
     'stylus_tests.styl',
